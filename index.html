@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Калькулятор технических требований СУНТД</title>
     <style>
-        /* ... все стили без изменений (оставлены для краткости, но в финальном коде они будут полными) ... */
         *{box-sizing:border-box}body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:#f0f2f5;margin:0;padding:24px 20px;color:#1e293b;position:relative}.container{max-width:1400px;margin:0 auto}h1{font-size:1.8rem;font-weight:600;margin:0 0 0.25rem 0;color:#0f3b5c}.sub{color:#2c5a7a;margin-bottom:2rem;border-left:4px solid #2c7da0;padding-left:1rem;font-weight:400}.admin-btn{position:fixed;top:20px;right:20px;background:#ffffffcc;border:1px solid #94a3b8;padding:8px 16px;border-radius:30px;font-size:0.9rem;font-weight:500;color:#1e293b;cursor:pointer;transition:0.2s;z-index:100;backdrop-filter:blur(4px)}.admin-btn:hover{background:#e2e8f0;border-color:#2c7da0}.card{background:white;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,0.05);padding:1.5rem 2rem;margin-bottom:2rem}.card h2{font-size:1.5rem;font-weight:600;margin-top:0;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;border-bottom:2px solid #e2e8f0;padding-bottom:0.6rem}.flex-row{display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start}.input-group{flex:1;min-width:220px}label{font-weight:600;display:block;margin-bottom:0.4rem;color:#0c4e6e}select,input,.checkbox-group{width:100%;padding:0.6rem 0.8rem;border-radius:14px;border:1px solid #cbd5e1;background:white;font-size:0.95rem}select:focus,input:focus{outline:none;border-color:#2c7da0;box-shadow:0 0 0 3px rgba(44,125,160,0.2)}.checkbox-group{display:flex;flex-wrap:wrap;gap:1rem;background:#f8fafc;border:1px solid #e2e8f0}.checkbox-group label{display:inline-flex;align-items:center;gap:0.5rem;font-weight:normal;cursor:pointer}.subsystems-list{display:flex;flex-direction:column;gap:0.75rem;background:#f9f9ff;padding:1rem;border-radius:20px;border:1px solid #e0e7ff}.subsystem-item{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;justify-content:flex-start}.subsystem-item input{width:auto;margin-right:4px}button{background:#2c7da0;color:white;border:none;padding:0.8rem 2rem;font-size:1rem;font-weight:600;border-radius:40px;cursor:pointer;transition:0.2s;box-shadow:0 2px 6px rgba(0,0,0,0.1);margin-top:0.5rem}button:hover{background:#1f5e7a;transform:translateY(-1px)}.result-section{background:#fefce8;border-left:6px solid #eab308}.result-table{width:100%;border-collapse:collapse;margin:1rem 0}.result-table th,.result-table td{text-align:left;padding:12px 10px;border-bottom:1px solid #e2e8f0;vertical-align:top}.result-table th{background:#f1f5f9;font-weight:700;width:30%}.warning-list{margin:1rem 0 0 0;padding-left:1.2rem}.warning-list li{margin:0.5rem 0;color:#9b2c1d}.two-cols{display:flex;gap:2rem;flex-wrap:wrap}.col{flex:1;min-width:280px}.note{font-size:0.8rem;color:#475569;background:#f1f5f9;padding:0.8rem;border-radius:16px;margin-top:1rem}.client-os-section{margin-bottom:1rem;border-radius:16px;background:#ffffffcc;padding:0.5rem 0;overflow-x:auto}.subsystems-details{margin-top:1.5rem;border:1px solid #e2e8f0;border-radius:20px;background:#ffffff;overflow:hidden}.subsystems-details-header{background:#f1f5f9;padding:0.8rem 1.2rem;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;align-items:center;user-select:none}.subsystems-details-header:hover{background:#e2e8f0}.subsystems-details-content{padding:1rem 1.5rem;border-top:1px solid #e2e8f0;display:none}.subsystems-details-content.show{display:block}.subsystem-detail-group{margin-bottom:1.2rem}.subsystem-detail-group strong{display:block;margin-bottom:0.3rem;color:#0c4e6e}.subsystem-detail-group ul{margin:0.2rem 0 0 1.2rem;padding-left:0}.subsystem-detail-group li{margin:0.2rem 0;color:#475569}footer{text-align:center;margin-top:2rem;font-size:0.75rem;color:#5b6e8c}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;justify-content:center;align-items:center}.modal-content{background:white;width:90%;max-width:1100px;max-height:90vh;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 35px rgba(0,0,0,0.2)}.modal-header{padding:1rem 1.5rem;background:#f8fafc;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}.modal-header h3{margin:0;font-size:1.2rem}.modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer;margin:0;padding:0;line-height:1}.modal-tabs{display:flex;gap:0.5rem;padding:0.5rem 1.5rem;background:#f1f5f9;border-bottom:1px solid #e2e8f0}.modal-tab{background:none;border:none;padding:0.5rem 1rem;cursor:pointer;border-radius:20px;margin:0;font-weight:500;font-size:0.9rem;color:#475569}.modal-tab.active{background:white;color:#0f3b5c;box-shadow:0 1px 3px rgba(0,0,0,0.1)}.modal-body{padding:1.5rem;overflow-y:auto;flex:1}.admin-form-group{margin-bottom:1.2rem}.admin-form-group label{font-weight:600;margin-bottom:0.3rem;font-size:0.9rem}.admin-form-group input,.admin-form-group textarea,.admin-form-group select{width:100%;padding:0.5rem;border-radius:12px;border:1px solid #cbd5e1;font-size:0.9rem}.admin-table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:0.9rem}.admin-table th,.admin-table td{border:1px solid #e2e8f0;padding:0.5rem;text-align:left;vertical-align:top}.admin-table th{background:#f1f5f9}.btn-small{background:#e2e8f0;color:#1e293b;padding:0.4rem 0.8rem;font-size:0.85rem;font-weight:500;margin:0;border-radius:20px;border:none;cursor:pointer}.btn-danger{background:#fecaca;color:#991b1b}.helper-text{display:block;font-size:0.7rem;color:#64748b;margin-top:0.2rem}.config-block{padding:0.8rem;margin-bottom:1rem;border-radius:16px;background:#f8fafc}.config-block:nth-child(even){background:#ffffff;border:1px solid #e2e8f0}.static-highlight{background:#fef9c3;border-left:6px solid #eab308;padding:0.8rem;margin-bottom:1.5rem;border-radius:16px}.readonly-field{background-color:#f1f5f9;cursor:default}.servers-list{display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem}.server-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:1rem}.server-item .server-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;flex-wrap:wrap;gap:0.5rem}.server-item .server-header strong{font-size:1rem;flex:1;min-width:120px}.server-item .server-details{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;font-size:0.85rem;margin-top:0.5rem}.server-item .server-details label{font-weight:normal;display:inline-flex;align-items:center;gap:0.3rem}.server-item .server-details input,.server-item .server-details select{width:70px;padding:0.2rem 0.4rem;border-radius:8px;border:1px solid #cbd5e1;font-size:0.8rem}.server-item .server-details select{width:auto;min-width:100px}.server-item .btn-small{margin-left:0.5rem}.subsystem-item select{width:auto;padding:0.2rem 0.4rem;border-radius:8px;border:1px solid #cbd5e1;font-size:0.8rem;margin-left:0.5rem}.server-results{margin-top:1.5rem;border-top:2px solid #e2e8f0;padding-top:1rem}.server-results h3{margin:1rem 0 0.5rem 0;background:#f1f5f9;padding:0.4rem 1rem;border-radius:20px}.server-results .result-table{margin:0.5rem 0 1.5rem}@media (max-width:780px){.card{padding:1.2rem}.admin-btn{padding:6px 12px;font-size:0.8rem}.col{min-width:100%}.client-os-section table{width:100%;display:block;overflow-x:auto}.col table{width:100%}.col td{word-break:break-word}.client-os-section table{width:100%}}
     </style>
 </head>
@@ -44,7 +43,7 @@
         <div class="subsystems-list" id="subsystemsContainer"></div>
         <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <button id="autoAssignBtn" class="btn-small" style="background:#2c7da0; color:white;">Автораспределение</button>
-            <span class="helper-text" style="display:inline-block; margin-left: 0.5rem;">Назначает выбранные подсистемы на серверы (сначала на "Платформа", затем по кругу)</span>
+            <span class="helper-text" style="display:inline-block; margin-left: 0.5rem;">Распределяет подсистемы по серверам (кроме выбранных для Платформы и БД) по кругу</span>
         </div>
         <div class="note">💡 <strong>Правило:</strong> если подсистема требует больше ресурсов, чем Платформа — итоговые требования повышаются.<br>📋 <strong>Детали:</strong> специфические требования выбранных подсистем отображаются в отдельном сворачиваемом блоке после расчета.</div>
     </div>
@@ -65,7 +64,6 @@
 
 <button class="admin-btn" id="adminBtn">⚙️ Настройка ограничений нагрузки</button>
 
-<!-- Модальное окно админки (без изменений) -->
 <div id="adminModal" class="modal"><div class="modal-content"><div class="modal-header"><h3>Административная панель</h3><button class="modal-close" id="closeModalBtn">&times;</button></div><div class="modal-tabs" id="modalTabs"><button class="modal-tab active" data-tab="platform">Версии Платформы</button><button class="modal-tab" data-tab="client">Клиентские требования</button><button class="modal-tab" data-tab="subsystems">Подсистемы</button><button class="modal-tab" data-tab="scaling">Масштабирование и запасы</button></div><div class="modal-body" id="modalBody"></div><div class="modal-header" style="border-top: 1px solid #e2e8f0; justify-content: flex-end; gap: 0.5rem;"><button id="exportConfigBtn" class="btn-small">📤 Экспорт JSON</button><button id="importConfigBtn" class="btn-small">📥 Импорт JSON</button><button id="resetConfigBtn" class="btn-small btn-danger">Вернуть исходные значения</button><button id="saveConfigBtn" class="btn-small" style="background:#2c7da0; color:white;">💾 Сохранить</button></div></div></div>
 
 <script>
@@ -137,7 +135,6 @@
             disk_gb: 0,
             network_gbit: 0
         });
-        // Автоматически назначаем первый сервер как платформенный и БД, если ещё не выбраны
         if (!config.selectedPlatformServer) {
             config.selectedPlatformServer = name;
         }
@@ -149,10 +146,8 @@
 
     function removeServer(name) {
         config.servers = config.servers.filter(s => s.name !== name);
-        // если удалённый сервер был выбран как платформенный или БД, сбрасываем выбор
         if (config.selectedPlatformServer === name) config.selectedPlatformServer = "";
         if (config.selectedDbServer === name) config.selectedDbServer = "";
-        // удаляем назначения подсистем
         for (let subId in config.subsystemAssignments) {
             if (config.subsystemAssignments[subId] === name) {
                 delete config.subsystemAssignments[subId];
@@ -169,17 +164,27 @@
         }
     }
 
+    // АВТОРАСПРЕДЕЛЕНИЕ (без учёта серверов Платформы и БД)
     function autoAssignSubsystems() {
         const serverNames = getServerNames();
         if (serverNames.length === 0) {
             alert('Сначала добавьте хотя бы один сервер.');
             return;
         }
-        let primary = serverNames.find(name => name.toLowerCase().includes('платформа'));
-        if (!primary) primary = serverNames[0];
+        // Исключаем серверы Платформы и БД из распределения
+        const exclude = new Set();
+        if (config.selectedPlatformServer) exclude.add(config.selectedPlatformServer);
+        if (config.selectedDbServer) exclude.add(config.selectedDbServer);
+        const available = serverNames.filter(name => !exclude.has(name));
+        if (available.length === 0) {
+            alert('Нет доступных серверов для распределения (все заняты Платформой или БД).');
+            return;
+        }
+        let idx = 0;
         for (let sub of config.subsystems) {
             if (selectedSubsystems.has(sub.id)) {
-                config.subsystemAssignments[sub.id] = primary;
+                config.subsystemAssignments[sub.id] = available[idx % available.length];
+                idx++;
             } else {
                 delete config.subsystemAssignments[sub.id];
             }
@@ -239,13 +244,12 @@
                             <label>ОЗУ (ГБ): <input type="number" step="1" class="server-ram" value="${s.ram_gb}" style="width:60px;"></label>
                             <label>Диск (ГБ): <input type="number" step="1" class="server-disk" value="${s.disk_gb}" style="width:60px;"></label>
                             <label>Сеть (Гбит/с): <input type="number" step="0.1" class="server-network" value="${s.network_gbit}" style="width:60px;"></label>
-                            <button class="btn-small update-server" data-name="${s.name}">Обновить</button>
+                            <button class="btn-small update-server" data-name="${s.name}">Сохранить настройки</button>
                         </div>
                     </div>`;
         });
         container.innerHTML = html;
 
-        // Привязываем события на кнопки и поля
         container.querySelectorAll('.remove-server').forEach(btn => {
             btn.addEventListener('click', () => {
                 const name = btn.dataset.name;
@@ -263,7 +267,6 @@
                     alert('Название сервера не может быть пустым.');
                     return;
                 }
-                // Проверяем уникальность имени (если изменилось)
                 if (newName !== name && getServers().some(s => s.name === newName)) {
                     alert(`Сервер с именем "${newName}" уже существует.`);
                     return;
@@ -278,19 +281,15 @@
                     disk_gb: parseInt(item.querySelector('.server-disk').value) || 0,
                     network_gbit: parseFloat(item.querySelector('.server-network').value) || 0
                 };
-                // Если имя изменилось, нужно обновить имя в конфиге и переименовать в назначениях и выбранных серверах
                 if (newName !== name) {
-                    // Обновляем имя в назначениях подсистем
                     for (let subId in config.subsystemAssignments) {
                         if (config.subsystemAssignments[subId] === name) {
                             config.subsystemAssignments[subId] = newName;
                         }
                     }
-                    // Обновляем выбранные серверы Платформы и БД
                     if (config.selectedPlatformServer === name) config.selectedPlatformServer = newName;
                     if (config.selectedDbServer === name) config.selectedDbServer = newName;
                 }
-                // Обновляем сам сервер
                 const server = config.servers.find(s => s.name === name);
                 if (server) {
                     Object.assign(server, newData);
@@ -298,10 +297,8 @@
                 renderAll();
             });
         });
-        // Автосохранение при изменении имени (по потере фокуса)
         container.querySelectorAll('.server-name-input').forEach(inp => {
             inp.addEventListener('change', function() {
-                // вызываем клик по кнопке обновить
                 const btn = this.closest('.server-item').querySelector('.update-server');
                 if (btn) btn.click();
             });
@@ -320,7 +317,6 @@
         dbSelect.innerHTML = `<option value="">— не выбрано —</option>` + optionsHtml;
         dbSelect.value = config.selectedDbServer || '';
 
-        // Сохраняем выбор при изменении
         platformSelect.onchange = function() {
             config.selectedPlatformServer = this.value;
         };
@@ -329,7 +325,6 @@
         };
     }
 
-    // ---------- ОТОБРАЖЕНИЕ ПОДСИСТЕМ С ВЫБОРОМ СЕРВЕРА ----------
     function renderSubsystems() {
         const container = document.getElementById('subsystemsContainer');
         if (!container) return;
@@ -404,13 +399,10 @@
         });
     }
 
-    // ---------- КНОПКА ДОБАВЛЕНИЯ СЕРВЕРА ----------
     document.getElementById('addServerBtn').addEventListener('click', addServer);
-
-    // ---------- КНОПКА АВТОРАСПРЕДЕЛЕНИЯ ----------
     document.getElementById('autoAssignBtn').addEventListener('click', autoAssignSubsystems);
 
-    // ---------- ФУНКЦИИ ЗАГРУЗКИ/СОХРАНЕНИЯ ----------
+    // ---------- ОСНОВНЫЕ ФУНКЦИИ РАСЧЁТА ----------
     function deepMerge(base, overrides) {
         if (overrides === undefined || overrides === null) return base;
         if (base === undefined || base === null) return overrides;
@@ -439,7 +431,6 @@
         if (saved) {
             try { config = deepMerge(DEFAULT_CONFIG, JSON.parse(saved)); } catch(e) { console.warn(e); }
         }
-        // Восстановление selectedSubsystems
         selectedSubsystems.clear();
         for (let sub of config.subsystems) {
             if (config.subsystemAssignments[sub.id] !== undefined) {
@@ -460,12 +451,10 @@
             platformSelect.appendChild(option);
         }
         renderAll();
-        // Восстановление выбора серверов
         document.getElementById('platformServerSelect').value = config.selectedPlatformServer || '';
         document.getElementById('dbServerSelect').value = config.selectedDbServer || '';
     }
 
-    // ---------- ОСНОВНЫЕ ФУНКЦИИ РАСЧЁТА ----------
     function aggregateServerReqs(baseReqs, selectedSubsList) {
         let result = { ...baseReqs };
         for (let subId of selectedSubsList) {
@@ -496,7 +485,6 @@
     }
 
     function checkOsCompatibilityForServer(server) {
-        // аналогично старой функции, но на основе выбранной ОС сервера
         const osVal = server.os || 'win2019';
         const allowedWindows = ["win2012","win2016","win2019","win2022","win2025"];
         const allowedLinux = ["linux_astra","linux_alt","linux_red","linux_atlant","linux_other"];
@@ -507,7 +495,13 @@
     }
 
     function renderClientTables(winReqs, linReqs) {
-        // клиентские таблицы остаются без изменений (выводятся один раз в блоке результатов)
+        const winTbody = document.querySelector('#clientWindowsTable tbody');
+        const linTbody = document.querySelector('#clientLinuxTable tbody');
+        winTbody.innerHTML = ''; linTbody.innerHTML = '';
+        const winRows = [ { param:"Процессор", val:`от ${winReqs.cpu_freq_ghz} ГГц` }, { param:"ОЗУ", val:`${winReqs.ram_gb} ГБ` }, { param:"Сетевой адаптер", val:`${winReqs.network_mbps} Мбит/с и выше` }, { param:"Операционная система", val:winReqs.os }, { param:"Браузер", val:winReqs.browsers }, { param:"Дополнительно", val:"Только 64-разрядная ОС; включены JS, cookies, всплывающие окна" } ];
+        winRows.forEach(r => { let tr = document.createElement('tr'); tr.innerHTML = `<td><strong>${r.param}</strong><td>${r.val}</td>`; winTbody.appendChild(tr); });
+        const linRows = [ { param:"Процессор", val:`от ${linReqs.cpu_freq_ghz} ГГц` }, { param:"ОЗУ", val:`${linReqs.ram_gb} ГБ` }, { param:"Сетевой адаптер", val:`${linReqs.network_mbps} Мбит/с и выше` }, { param:"Операционная система", val:linReqs.os }, { param:"Браузер", val:linReqs.browsers }, { param:"Дополнительно", val:"Включены JS, cookies, всплывающие окна" } ];
+        linRows.forEach(r => { let tr = document.createElement('tr'); tr.innerHTML = `<td><strong>${r.param}</strong><td>${r.val}</td>`; linTbody.appendChild(tr); });
     }
 
     function toggleSubsystemsDetails() {
@@ -599,7 +593,6 @@
             });
         }
 
-        // Формируем глобальные предупреждения
         let warnings = [];
         for (let tier of config.scaling.userTiers) {
             if (userCount >= tier.min && (tier.max === null || userCount <= tier.max)) {
@@ -612,7 +605,6 @@
             warnings.push(`📚 Объем документов ${docsMillion} млн (>${config.scaling.baseDocsMillion} млн). Автоматически добавлено +${extraRamByDocs} ГБ ОЗУ к минимальным требованиям (правило: +4 ГБ на каждые 3 млн док.).`);
         }
 
-        // Проверка совместимости ОС для каждого сервера и предупреждения по виртуализации
         serversResults.forEach(res => {
             const osCheck = checkOsCompatibilityForServer(res.server);
             if (!osCheck.compatible) {
@@ -625,9 +617,7 @@
             }
         });
 
-        // Проверки по подсистемам (требующие Windows)
         if (allSelectedSubs.some(sub => sub.id === 'soglasovanie')) {
-            // проверяем, есть ли сервер с Windows, на который назначена эта подсистема
             let soglasovanieOnWin = false;
             for (let sub of allSelectedSubs) {
                 if (sub.id === 'soglasovanie') {
@@ -643,7 +633,6 @@
             }
         }
         if (allSelectedSubs.some(sub => sub.id === 'kassist4')) {
-            // для kassist4 клиентская часть только Linux, но сервер может быть Windows – предупреждение
             for (let sub of allSelectedSubs) {
                 if (sub.id === 'kassist4') {
                     const assignedServer = config.servers.find(s => s.name === config.subsystemAssignments[sub.id]);
@@ -654,13 +643,11 @@
             }
         }
 
-        // Резервирование
         let anyServerHasReserve = serversResults.some(r => r.subsystemCount >= config.scaling.subsystemCountThreshold);
         if (anyServerHasReserve) {
             warnings.push(`🔧 На некоторых серверах выбрано 5 и более подсистем. Применен коэффициент резервирования: RAM +${Math.round((config.scaling.subsystemRamMultiplier-1)*100)}%, диск +${Math.round((config.scaling.subsystemDiskMultiplier-1)*100)}% к минимальным требованиям.`);
         }
 
-        // Отображаем результаты по серверам
         const resultsContainer = document.getElementById('serverResultsContainer');
         resultsContainer.innerHTML = '';
         serversResults.forEach((res, idx) => {
@@ -693,7 +680,6 @@
             resultsContainer.appendChild(serverDiv);
         });
 
-        // Остальные блоки
         const warnDiv = document.getElementById('warningsArea');
         warnDiv.innerHTML = '';
         if (warnings.length) {
@@ -709,7 +695,6 @@
             warnDiv.innerHTML = '<div style="color: #2b6e3b;">✅ Все требования соответствуют утвержденным ТТ.</div>';
         }
 
-        // Дополнительные требования подсистем
         const detailsBlock = document.getElementById('subsystemsDetailsBlock');
         const detailsContent = document.getElementById('subsystemsDetailsContent');
         const selectedWithWarnings = allSelectedSubs.filter(sub => sub.extraWarnings && sub.extraWarnings.length);
@@ -733,10 +718,9 @@
         if (doScroll) window.scrollTo({ top: document.getElementById('resultPanel').offsetTop - 20, behavior: 'smooth' });
     }
 
-    // ---------- ОБРАБОТЧИКИ СОБЫТИЙ ----------
+    // ---------- ОБРАБОТЧИКИ ----------
     document.getElementById('calcBtn').addEventListener('click', calculateWithScroll);
     document.getElementById('exportBtn').addEventListener('click', function() {
-        // копирование сводки – можно оставить как было
         alert('Функция копирования сводки адаптируется под многосерверный режим. Пока просто заглушка.');
     });
     document.getElementById('subsystemsDetailsHeader').addEventListener('click', toggleSubsystemsDetails);
@@ -745,11 +729,12 @@
     document.getElementById('userCount').addEventListener('input', calculateWithoutScroll);
     document.getElementById('docCount').addEventListener('input', calculateWithoutScroll);
 
-    // ---------- АДМИН-ПАНЕЛЬ (без изменений) ----------
+    // ---------- АДМИНИСТРАТИВНАЯ ПАНЕЛЬ (ПОЛНОСТЬЮ ВОССТАНОВЛЕНА) ----------
     const adminBtn = document.getElementById('adminBtn');
     const modal = document.getElementById('adminModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modalBody = document.getElementById('modalBody');
+
     function openModal() { modal.style.display = 'flex'; renderAdminPanel(); }
     function closeModal() { modal.style.display = 'none'; }
     adminBtn.onclick = openModal;
@@ -765,15 +750,218 @@
         attachGlobalDelegation();
     }
 
-    // ... (админка полностью копируется из предыдущей версии, здесь она не меняется) ...
-    // Для краткости я не дублирую её полностью, но она должна быть в финальном коде.
-    // В данном ответе я привожу только обновлённые части, а полный код с админкой будет в приложенном файле.
+    // ---------- ФУНКЦИИ АДМИНКИ ----------
+    function renderPlatformTab() {
+        let html = `<div class="admin-form-group"><button id="addPlatformBtn" class="btn-small">+ Добавить версию</button></div><table class="admin-table"><thead><tr><th>Версия</th><th>CPU (ядер)</th><th>Частота (ГГц)</th><th>ОЗУ (ГБ)</th><th>База диска (ГБ)</th><th>Сеть (Гбит/с)</th><th>Действия</th></tr></thead><tbody>`;
+        const versions = Object.keys(config.platformReqs).sort();
+        for (let ver of versions) {
+            const p = config.platformReqs[ver];
+            html += `<tr data-version="${ver}"><td style="white-space: nowrap;">${ver}</td><td><input type="number" step="1" class="edit-cpu-cores" value="${p.cpu_cores}" style="width:70px"></td><td><input type="number" step="0.1" class="edit-cpu-freq" value="${p.cpu_freq_ghz}" style="width:70px"></td><td><input type="number" step="1" class="edit-ram" value="${p.ram_gb}" style="width:70px"></td><td><input type="number" step="1" class="edit-disk-base" value="${p.disk_free_gb_base}" style="width:70px"></td><td><input type="number" step="0.1" class="edit-network" value="${p.network_gbit}" style="width:70px"></td><td><button class="btn-small copy-version" data-version="${ver}">Создать на основе</button> <button class="btn-small btn-danger delete-version" data-version="${ver}">Удалить</button></td></tr>`;
+        }
+        html += `</tbody></table>`;
+        return html;
+    }
 
+    function renderClientTab() {
+        const win = config.clientReqs.windows, lin = config.clientReqs.linux;
+        return `<h4>Клиент Windows</h4><div class="admin-form-group"><label>Частота CPU (ГГц)</label><input type="number" step="0.1" id="win_cpu_freq" value="${win.cpu_freq_ghz}"><span class="helper-text">Минимальная тактовая частота процессора на рабочей станции</span></div><div class="admin-form-group"><label>Оперативная память (ГБ)</label><input type="number" step="1" id="win_ram" value="${win.ram_gb}"><span class="helper-text">Минимальный объем ОЗУ</span></div><div class="admin-form-group"><label>Сетевой адаптер (Мбит/с)</label><input type="number" step="10" id="win_net" value="${win.network_mbps}"><span class="helper-text">Пропускная способность сети</span></div><div class="admin-form-group"><label>Операционная система</label><input type="text" id="win_os" value="${win.os}"><span class="helper-text">Список поддерживаемых версий Windows</span></div><div class="admin-form-group"><label>Браузеры</label><input type="text" id="win_browsers" value="${win.browsers}"><span class="helper-text">Перечень браузеров, с которыми гарантированно работает веб-клиент</span></div><h4>Клиент Linux</h4><div class="admin-form-group"><label>Частота CPU (ГГц)</label><input type="number" step="0.1" id="lin_cpu_freq" value="${lin.cpu_freq_ghz}"><span class="helper-text">Минимальная тактовая частота процессора на рабочей станции</span></div><div class="admin-form-group"><label>Оперативная память (ГБ)</label><input type="number" step="1" id="lin_ram" value="${lin.ram_gb}"><span class="helper-text">Минимальный объем ОЗУ</span></div><div class="admin-form-group"><label>Сетевой адаптер (Мбит/с)</label><input type="number" step="10" id="lin_net" value="${lin.network_mbps}"><span class="helper-text">Пропускная способность сети</span></div><div class="admin-form-group"><label>Операционная система</label><input type="text" id="lin_os" value="${lin.os}"><span class="helper-text">Список поддерживаемых версий Linux</span></div><div class="admin-form-group"><label>Браузеры</label><input type="text" id="lin_browsers" value="${lin.browsers}"><span class="helper-text">Перечень браузеров, с которыми гарантированно работает веб-клиент</span></div>`;
+    }
+
+    function renderSubsystemsTab() {
+        let html = `<div class="admin-form-group"><button id="addSubsystemBtn" class="btn-small">+ Добавить подсистему</button></div><div id="subsystemsList">`;
+        config.subsystems.forEach((sub, idx) => {
+            html += `<div class="admin-form-group" data-subsys-index="${idx}" style="border:1px solid #e2e8f0; padding:0.8rem; margin-bottom:0.8rem; border-radius:16px;"><strong>${sub.name}</strong><div><label>Идентификатор подсистемы (ID)</label><input type="text" class="subsys-id" value="${sub.id}"></div><div><label>Название</label><input type="text" class="subsys-name" value="${sub.name}"></div><div><label>Требования (ОЗУ, CPU ядра, CPU частота)</label><input type="text" class="subsys-reqs" value="${sub.requirements.server.ram_gb}, ${sub.requirements.server.cpu_cores}, ${sub.requirements.server.cpu_freq_ghz}"><span class="helper-text">Формат: число, число, число (например: 16, 4, 2.7)</span></div><div><label>Дополнительные требования к подсистеме</label><textarea class="subsys-warnings" rows="3">${sub.extraWarnings.join('\n')}</textarea><span class="helper-text">Формат: каждое требование с новой строки</span></div><button class="btn-small btn-danger delete-subsystem" data-idx="${idx}">Удалить</button></div>`;
+        });
+        html += `</div>`;
+        return html;
+    }
+
+    function renderScalingTab() {
+        const s = config.scaling;
+        return `<div class="static-highlight"><strong>Глобальные правила </strong><br><div class="admin-form-group"><label>Базовый объем документов (млн)</label><input type="number" id="baseDocs" value="${s.baseDocsMillion}" readonly class="readonly-field"><span class="helper-text">До этого количества документов дополнительно ОЗУ не добавляется</span></div><div class="admin-form-group"><label>Дополнительно ОЗУ на каждые 3 млн (ГБ)</label><input type="number" id="ramPerExtra" value="${s.ramPerExtra3MillionGB}" readonly class="readonly-field"><span class="helper-text">Сколько гигабайт ОЗУ добавляется за каждые 3 млн документов сверх базового уровня</span></div></div>
+        <h4>Коэффициент резервирования при большом количестве подсистем</h4>
+        <div class="admin-form-group config-block"><label>Порог количества подсистем</label><input type="number" id="subsysThresh" value="${s.subsystemCountThreshold}"><span class="helper-text">Если выбрано столько или больше подсистем, применяются множители. Пример: если выбрано 5 подсистем, то при достижении этого количества подсистем рекомендуется использовать дополнительные ресурсы памяти</span></div>
+        <div class="admin-form-group config-block"><label>Множитель ОЗУ</label><input type="number" step="0.01" id="subsysRamMult" value="${s.subsystemRamMultiplier}"><span class="helper-text">Пример: 1.15 = увеличение на 15%</span></div>
+        <div class="admin-form-group config-block"><label>Множитель диска</label><input type="number" step="0.01" id="subsysDiskMult" value="${s.subsystemDiskMultiplier}"><span class="helper-text">Пример: 1.10 = увеличение на 10%</span></div>
+        <h4>Градация нагрузки по пользователям</h4>
+        <div id="tiersContainer">${s.userTiers.map((t,i)=>`<div class="config-block" data-tier-index="${i}" style="position:relative;"><button class="btn-small btn-danger remove-tier" style="position:absolute; top:0.5rem; right:0.5rem;">Удалить диапазон</button><div><label>Нижняя граница количества пользователей (вкл.)</label><input type="number" class="tier-min" value="${t.min}"></div><div><label>Верхняя граница количества пользователец (вкл., если значение не указано - ∞)</label><input type="number" class="tier-max" value="${t.max===null?'':t.max}"></div><div><label>Множитель ОЗУ</label><input type="number" step="0.1" class="tier-ram-mult" value="${t.ramMultiplier}"></div><div><label>Добавляемых ядер CPU</label><input type="number" class="tier-cores" value="${t.extraCores}"></div><div><label>Рекомендуемая частота (ГГц)</label><input type="number" step="0.1" class="tier-freq" value="${t.targetFreq===null?'':t.targetFreq}"></div></div>`).join('')}</div>
+        <button id="addTierBtn" class="btn-small">+ Добавить диапазон</button>
+        <h4>Формула дискового пространства</h4>
+        <div id="diskRangesContainer">${s.diskFormula.ranges.map((r,i)=>`<div class="config-block" data-range-index="${i}" style="position:relative;"><button class="btn-small btn-danger remove-range" style="position:absolute; top:0.5rem; right:0.5rem;">Удалить диапазон</button><div><label>Верхняя граница количества документов (если значение не указано - ∞)</label><input type="number" class="range-max" value="${r.max===null?'':r.max}"></div><div><label>Количество затрачиваемых ресурсов на единицу (ГБ/млн)</label><input type="number" step="0.1" class="range-coeff" value="${r.coeff}"></div><div><label>Фиксированный запас внутри диапазона (ГБ)</label><input type="number" class="range-extra" value="${r.extra}"></div></div>`).join('')}</div>
+        <button id="addRangeBtn" class="btn-small">+ Добавить диапазон</button>
+        <div class="admin-form-group config-block"><label>Рекомендуемый диск: дополнительно к минимальному объему памяти (ГБ)</label><input type="number" id="diskPadding" value="${s.diskRecommendedPadding}"><span class="helper-text">Дополнииельно рекомендованный объем памяти диска. Не входит в расчет минимальных требований. Пример: 30</span></div>
+        <h4>Режим «Только Справочная система»</h4>
+        <div class="admin-form-group config-block"><label>ОЗУ (ГБ)</label><input type="number" id="refRam" value="${s.referenceModeFactor.ram_gb}"></div>
+        <div class="admin-form-group config-block"><label>CPU (ядер)</label><input type="number" id="refCores" value="${s.referenceModeFactor.cpu_cores}"></div>
+        <div class="admin-form-group config-block"><label>CPU частота (ГГц)</label><input type="number" step="0.1" id="refFreq" value="${s.referenceModeFactor.cpu_freq_ghz}"></div>`;
+    }
+
+    function attachGlobalDelegation() {
+        modalBody.removeEventListener('click', handleModalClick);
+        modalBody.addEventListener('click', handleModalClick);
+    }
+
+    function handleModalClick(e) {
+        const target = e.target;
+        if (target.classList.contains('copy-version')) {
+            const ver = target.dataset.version;
+            const newVer = prompt('Введите название новой версии (например, 6.5.0)');
+            if (newVer && !config.platformReqs[newVer]) {
+                config.platformReqs[newVer] = JSON.parse(JSON.stringify(config.platformReqs[ver]));
+                renderAdminPanel();
+            } else if (newVer) alert('Версия уже существует');
+        } else if (target.classList.contains('delete-version')) {
+            const ver = target.dataset.version;
+            if (ver !== '6.4.5' && ver !== '6.4.6' && confirm(`Удалить версию ${ver}?`)) {
+                delete config.platformReqs[ver];
+                renderAdminPanel();
+            } else alert('Нельзя удалить базовые версии');
+        } else if (target.id === 'addPlatformBtn') {
+            const newVer = prompt('Название версии (например, 6.5.0)');
+            if (newVer && !config.platformReqs[newVer]) {
+                config.platformReqs[newVer] = { cpu_cores:0, cpu_freq_ghz:0, ram_gb:0, disk_free_gb_base:0, network_gbit:0, bios_power_setting:true, os_windows:[], os_linux_compatible:[], power_plan_recommended:"" };
+                renderAdminPanel();
+            } else if (newVer) alert('Версия уже существует');
+        } else if (target.id === 'addSubsystemBtn') {
+            const newId = prompt('Введите идентификатор подсистемы (ID)');
+            if (newId && !config.subsystems.find(s=>s.id===newId)) {
+                config.subsystems.push({ id:newId, name:'Новая подсистема', requirements:{server:{ram_gb:16,cpu_cores:4,cpu_freq_ghz:2.7}}, extraWarnings:[] });
+                renderAdminPanel();
+            } else if (newId) alert('ID уже существует');
+        } else if (target.classList.contains('delete-subsystem')) {
+            const idx = parseInt(target.dataset.idx);
+            if (confirm('Удалить подсистему?')) { config.subsystems.splice(idx,1); renderAdminPanel(); }
+        } else if (target.id === 'addTierBtn') {
+            config.scaling.userTiers.push({ min:1, max:null, ramMultiplier:1.0, extraCores:0, targetFreq:null });
+            renderAdminPanel();
+        } else if (target.classList.contains('remove-tier')) {
+            const block = target.closest('.config-block');
+            if (block) {
+                const idx = parseInt(block.dataset.tierIndex);
+                if (!isNaN(idx) && config.scaling.userTiers.length > 1) {
+                    config.scaling.userTiers.splice(idx,1);
+                    renderAdminPanel();
+                } else if (config.scaling.userTiers.length === 1) alert('Должен остаться хотя бы один диапазон');
+            }
+        } else if (target.id === 'addRangeBtn') {
+            config.scaling.diskFormula.ranges.push({ max:null, coeff:1.0, extra:0 });
+            renderAdminPanel();
+        } else if (target.classList.contains('remove-range')) {
+            const block = target.closest('.config-block');
+            if (block) {
+                const idx = parseInt(block.dataset.rangeIndex);
+                if (!isNaN(idx) && config.scaling.diskFormula.ranges.length > 1) {
+                    config.scaling.diskFormula.ranges.splice(idx,1);
+                    renderAdminPanel();
+                } else if (config.scaling.diskFormula.ranges.length === 1) alert('Должен остаться хотя бы один диапазон');
+            }
+        }
+    }
+
+    function collectAdminData() {
+        const versionRows = document.querySelectorAll('#modalBody table tbody tr');
+        if (versionRows.length) {
+            versionRows.forEach(row => {
+                const ver = row.dataset.version;
+                if (ver && config.platformReqs[ver]) {
+                    config.platformReqs[ver].cpu_cores = parseInt(row.querySelector('.edit-cpu-cores').value);
+                    config.platformReqs[ver].cpu_freq_ghz = parseFloat(row.querySelector('.edit-cpu-freq').value);
+                    config.platformReqs[ver].ram_gb = parseInt(row.querySelector('.edit-ram').value);
+                    config.platformReqs[ver].disk_free_gb_base = parseInt(row.querySelector('.edit-disk-base').value);
+                    config.platformReqs[ver].network_gbit = parseFloat(row.querySelector('.edit-network').value);
+                }
+            });
+        }
+        if (document.getElementById('win_cpu_freq')) {
+            config.clientReqs.windows = { cpu_freq_ghz: parseFloat(document.getElementById('win_cpu_freq').value), ram_gb: parseInt(document.getElementById('win_ram').value), network_mbps: parseInt(document.getElementById('win_net').value), os: document.getElementById('win_os').value, browsers: document.getElementById('win_browsers').value };
+            config.clientReqs.linux = { cpu_freq_ghz: parseFloat(document.getElementById('lin_cpu_freq').value), ram_gb: parseInt(document.getElementById('lin_ram').value), network_mbps: parseInt(document.getElementById('lin_net').value), os: document.getElementById('lin_os').value, browsers: document.getElementById('lin_browsers').value };
+        }
+        const subsysDivs = document.querySelectorAll('#subsystemsList > div');
+        if (subsysDivs.length) {
+            let newSubsystems = [];
+            subsysDivs.forEach(div => {
+                let id = div.querySelector('.subsys-id').value;
+                let name = div.querySelector('.subsys-name').value;
+                let reqs = div.querySelector('.subsys-reqs').value.split(',').map(s=>parseFloat(s.trim()));
+                let ram = reqs[0], cores = reqs[1], freq = reqs[2];
+                let warnings = div.querySelector('.subsys-warnings').value.split('\n').filter(l=>l.trim().length);
+                newSubsystems.push({ id, name, requirements: { server: { ram_gb: ram, cpu_cores: cores, cpu_freq_ghz: freq } }, extraWarnings: warnings });
+            });
+            config.subsystems = newSubsystems;
+        }
+        if (document.getElementById('baseDocs')) {
+            config.scaling.baseDocsMillion = parseFloat(document.getElementById('baseDocs').value);
+            config.scaling.ramPerExtra3MillionGB = parseFloat(document.getElementById('ramPerExtra').value);
+            config.scaling.subsystemCountThreshold = parseInt(document.getElementById('subsysThresh').value);
+            config.scaling.subsystemRamMultiplier = parseFloat(document.getElementById('subsysRamMult').value);
+            config.scaling.subsystemDiskMultiplier = parseFloat(document.getElementById('subsysDiskMult').value);
+            let newTiers = [];
+            const tierDivs = document.querySelectorAll('#tiersContainer .config-block');
+            tierDivs.forEach(div => {
+                let min = parseInt(div.querySelector('.tier-min').value);
+                let max = div.querySelector('.tier-max').value;
+                max = (max === '') ? null : parseInt(max);
+                let ramMult = parseFloat(div.querySelector('.tier-ram-mult').value);
+                let cores = parseInt(div.querySelector('.tier-cores').value);
+                let freq = parseFloat(div.querySelector('.tier-freq').value) || null;
+                newTiers.push({ min, max, ramMultiplier: ramMult, extraCores: cores, targetFreq: freq });
+            });
+            config.scaling.userTiers = newTiers;
+            let newRanges = [];
+            const rangeDivs = document.querySelectorAll('#diskRangesContainer .config-block');
+            rangeDivs.forEach(div => {
+                let max = div.querySelector('.range-max').value;
+                max = (max === '') ? null : parseFloat(max);
+                let coeff = parseFloat(div.querySelector('.range-coeff').value);
+                let extra = parseFloat(div.querySelector('.range-extra').value);
+                newRanges.push({ max, coeff, extra });
+            });
+            config.scaling.diskFormula.ranges = newRanges;
+            config.scaling.diskRecommendedPadding = parseInt(document.getElementById('diskPadding').value);
+            config.scaling.referenceModeFactor = {
+                ram_gb: parseInt(document.getElementById('refRam').value),
+                cpu_cores: parseInt(document.getElementById('refCores').value),
+                cpu_freq_ghz: parseFloat(document.getElementById('refFreq').value)
+            };
+        }
+    }
+
+    document.getElementById('saveConfigBtn').onclick = () => { collectAdminData(); saveConfig(); };
+    document.getElementById('resetConfigBtn').onclick = () => { if (confirm('Вернуть все исходные значения?')) { localStorage.removeItem('suntd_calculator_config'); location.reload(); } };
+    document.getElementById('exportConfigBtn').onclick = () => { let dataStr = JSON.stringify(config, null, 2); let blob = new Blob([dataStr], {type:'application/json'}); let url = URL.createObjectURL(blob); let a = document.createElement('a'); a.href = url; a.download = 'calculator_config.json'; a.click(); URL.revokeObjectURL(url); };
+    document.getElementById('importConfigBtn').onclick = () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'application/json';
+        input.onchange = async (e) => {
+            const file = e.target.files[0];
+            if (!file) { alert('Файл не выбран'); return; }
+            try {
+                const content = await file.text();
+                if (!content || content.trim() === '') throw new Error('Файл пуст');
+                let cleanContent = content.charCodeAt(0) === 0xFEFF ? content.slice(1) : content;
+                const imported = JSON.parse(cleanContent);
+                config = deepMerge(DEFAULT_CONFIG, imported);
+                saveConfig();
+            } catch (err) {
+                console.error('Ошибка импорта:', err);
+                alert(`Ошибка импорта: ${err.message}\nПроверьте файл на корректность JSON.\nПодробности в консоли (F12).`);
+            }
+        };
+        input.click();
+    };
+
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            renderAdminPanel();
+        });
+    });
+
+    // ---------- ЗАПУСК ----------
     loadConfig();
     setTimeout(() => calculateWithoutScroll(), 100);
-
-    // Для корректной работы админки – все её функции должны быть здесь. Я их опустил для экономии места, но в финальном коде они есть.
-    // В реальном ответе я предоставлю полный код целиком.
 </script>
 </body>
 </html>
